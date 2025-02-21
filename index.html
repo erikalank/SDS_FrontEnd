@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <script type="module" src="js/main.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1.2.4/dist/frappe-charts.min.iife.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo.JPEG" alt="logo">
+          </a>
+        </div>
+        <div class="main-menu">
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="aboutus.html">About Us</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Hamburger Button -->
+         <button class="hamburger-button">
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+         </button>
+         <div class="mobile-menu">
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="aboutus.html">About Us</a>
+            </li>
+          </ul>
+         </div>
+      </div>
+    </nav>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-heading text-xxl">
+            Explore data visually!
+          </h1>
+          <p class="hero-text">
+            Use interactive charts and maps to analyze trends and uncover insights effortlessly.
+          </p>
+        </div>
+      </div>
+    </section>
+     <!-- Data -->
+     <section id="data-section" class="data">
+      <div class="toggle-container">
+          <div class="toggle-header" id="toggle-chart">
+              <span>Chart</span>
+              <i class="fa fa-plus"></i>
+          </div>
+          <div id="chart-container" class="hidden">
+              <h3>Choose data for chart:</h3>
+              <button class="btn btn-primary" id="populationGrowth">Population growth</button>
+              <button class="btn btn-primary" id="birthAndDeath">Birth and death rate</button>
+              <button class="btn btn-primary" id="populationForecast">Population forecast</button>
+              <div id="chart"></div>
+          </div>
+      
+          <div class="toggle-header" id="toggle-map">
+              <span>Map</span>
+              <i class="fa fa-plus"></i>
+          </div>
+          <div id="map-container" class="hidden">
+              <h3>Choose data for map:</h3>
+              <button class="btn btn-primary" id="municipalityData">Population</button>
+              <button class="btn btn-primary" id="employmentRate">Employment rate</button>
+              <h3 id="map-title"></h3>
+              <div id="map"></div>
+          </div>
+      </div>
+    </section>
+    <!-- Comparison-->
+     <section class="comparison">
+      <div class="container-sm">
+        <h3 class="comparison-heading text-xl text-center">
+          Comparison: Chart vs. Map
+        </h3>
+        <p class="comparison-subheading text-md text-center">
+          Compare what different info you can get from each.
+        </p>
+        <div class="comparison-grid">
+          <!-- Chart Card -->
+          <div class="card bg-light">
+            <div class="comparison-card header">
+              <h4 class="comparison-heading text-xl">
+                Charts
+              </h4>
+              <p class="comparison-card-subheading">
+                Shows trends ovet time, growth, and comparisons.
+              </p>
+            </div>
+            <div class="comparison-card-body">
+              <ul>
+                <li><i class="fas fa-minus"></i> Population trends</li>
+                <li><i class="fas fa-minus"></i>Birth & death rates</li>
+                <li><i class="fas fa-minus"></i>Future predictions</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Map Card -->
+          <div class="card bg-black">
+            <div class="pricing-card-header">
+              <h4 class="pricing-card-heading text-xl">Maps</h4>
+              <p class="pricing-card-subheading">
+                Show geographic distributions and variations.
+              </p>
+            </div>
+            <div class="pricing-card-body">
+              <ul>
+                <li><i class="fas fa-minus"></i>Population per region</li>
+                <li><i class="fas fa-minus"></i>Employment rates</li>
+                <li><i class="fas fa-minus"></i>Different map options</li>
+              </ul>
+            </div>
+        </div>
+      </div>
+     </section>
+      <!-- Footer -->
+      <footer class="footer bg-black">
+        <div class="container">
+          <div class="footer-grid">
+            <div>
+              <div class="card">
+                <h4>Stay Updated</h4>
+                <p class="text-sm">
+                    Subscribe for insights on the latest data trends and visualization tools.
+                </p>
+                <form>
+                  <input type="email" id="email" placeholder="Enter your emal">
+                  <button type="submit" class="btn btn-primary btn-block">Subscribe</button>
+                </form>
+              </div>
+              <i class="fab fa-linkedin"></i>
+              <i class="fab fa-twitter"></i>
+            </div>
+            <div>
+              <h4>Contact</h4>
+              <ul>
+                <li>
+                  <a href="#">hello@example.com</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
